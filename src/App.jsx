@@ -10,7 +10,7 @@ function App() {
   const { theme } = context;
 
   return (
-    <div className="flex h-screen overflow-hidden bg-slate-100 dark:bg-slate-950 font-sans text-slate-900 dark:text-slate-100">
+    <div className={`flex h-screen overflow-hidden ${theme ? "dark" : ""} bg-slate-100 dark:bg-slate-950 font-sans text-slate-900 dark:text-slate-100`}>
       {/* Sidebar — Visible on Desktop (md:flex), hidden on Mobile */}
       <div className="hidden md:flex">
         <SideBar />
