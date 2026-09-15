@@ -2,6 +2,7 @@ import React from "react";
 import { HiOutlineMenuAlt2, HiOutlineX } from "react-icons/hi";
 import { BsMoon, BsBell, BsChevronDown } from "react-icons/bs";
 import MenuDropdown from "./MenuDropdown.jsx";
+import User from "./User.jsx";
 
 const Navbar = ({ menuOpen, onMenuToggle }) => {
   return (
@@ -46,28 +47,10 @@ const Navbar = ({ menuOpen, onMenuToggle }) => {
 
         <div className="h-6 w-px bg-slate-200 dark:bg-slate-800 mx-1" />
 
-        
+        <User/>
 
-        
-        <div
-          id="header-user-chip"
-          className="flex items-center gap-2.5 p-1 pr-3 rounded-full border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 hover:border-indigo-400 dark:hover:border-indigo-500 transition-all cursor-pointer"
-          role="button"
-          tabIndex={0}
-        >
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-pink-500 text-white font-bold text-xs flex items-center justify-center shadow-xs">
-            JD
-          </div>
-          <div className="hidden sm:flex flex-col text-left leading-tight">
-            <span className="text-xs font-semibold text-slate-900 dark:text-white">
-              John Doe
-            </span>
-            <span className="text-[10px] text-slate-500 dark:text-slate-400">
-              Job Seeker
-            </span>
-          </div>
-          <BsChevronDown size={12} className="text-slate-400" />
-        </div>
+
+    
       </div>
 
       {menuOpen && (
