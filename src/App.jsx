@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "./components/navbar/Navbar";
 import SideBar from "./components/SideBar";
 import JobList from "./pages/JobList";
+import { NavbarProvider } from "./provider/NavbarProvider.jsx";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,8 +16,13 @@ function App() {
 
       {/* Main Content Area */}
       <div className="flex flex-col flex-1 overflow-hidden relative">
-        <Navbar menuOpen={menuOpen} onMenuToggle={() => setMenuOpen((prev) => !prev)} />
-        
+        <NavbarProvider>
+          <Navbar
+            menuOpen={menuOpen}
+            onMenuToggle={() => setMenuOpen((prev) => !prev)}
+          />
+        </NavbarProvider>
+
         <main className="flex-1 overflow-y-auto p-4 md:p-8" id="main-content">
           <JobList />
         </main>
