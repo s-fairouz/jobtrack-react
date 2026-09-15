@@ -5,8 +5,11 @@ import User from "../User.jsx";
 import NavbarTitle from "./NavbarTitle.jsx";
 import NavbarTheme from "./NavbarTheme.jsx";
 import NavbarNotification from "./NavbarNotification.jsx";
+import { useNavbar } from "../../hooks/useNavbar.js";
 
 const Navbar = ({ menuOpen, onMenuToggle }) => {
+    const context = useNavbar();
+    const { theme } = context;
   return (
     <header className="relative z-30 h-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 md:px-6 flex items-center justify-between shadow-xs shrink-0">
       <NavbarTitle menuOpen={menuOpen} onMenuToggle={onMenuToggle} />

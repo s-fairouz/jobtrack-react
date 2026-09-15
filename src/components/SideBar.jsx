@@ -2,6 +2,8 @@ import React from "react";
 import { BsBriefcase, BsHeart, BsGear } from "react-icons/bs";
 
 const SideBar = ({ isOpen, onClose }) => {
+    const context = useNavbar();
+    const { theme } = context;
   return (
     <>
       {/* Mobile Backdrop */}

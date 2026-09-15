@@ -1,5 +1,8 @@
 import { BsBriefcase, BsGear, BsHeart } from "react-icons/bs";
+import { useNavbar } from "../../hooks/useNavbar.js";
 const MenuDropdown = ({ onMenuToggle }) => {
+    const context = useNavbar();
+    const { theme } = context;
   return (
     <>
       <div

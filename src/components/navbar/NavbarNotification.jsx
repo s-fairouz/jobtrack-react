@@ -1,6 +1,9 @@
 import { BsBell } from 'react-icons/bs'
+import { useNavbar } from '../../hooks/useNavbar.js';
 
 const NavbarNotification = () => {
+    const context = useNavbar();
+    const { theme } = context;
   return (
     <button
           id="header-notifications"

@@ -1,7 +1,10 @@
 import React from 'react'
 import { HiOutlineMenuAlt2, HiOutlineX } from 'react-icons/hi'
+import { useNavbar } from '../../hooks/useNavbar.js';
 
 const NavbarTitle = ({ menuOpen ,onMenuToggle}) => {
+    const context = useNavbar();
+    const { theme } = context;
   return (
       <div className="flex items-center gap-3">
           <button

@@ -1,5 +1,6 @@
-
 const User = () => {
+  const context = useNavbar();
+  const { theme } = context;
   return (
     <div
       id="header-user-chip"
@@ -18,7 +19,6 @@ const User = () => {
           Job Seeker
         </span>
       </div>
-    
     </div>
   );
 };
