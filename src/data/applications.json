@@ -1,0 +1,14 @@
+[
+  {
+    "jobId": "job-101",
+    "status": "Applied",
+    "appliedAt": "2026-09-19",
+    "notes": "Submitted CV and portfolio"
+  },
+  {
+    "jobId": "job-103",
+    "status": "Interviewing",
+    "appliedAt": "2026-09-17",
+    "notes": "Technical screen scheduled"
+  }
+]
