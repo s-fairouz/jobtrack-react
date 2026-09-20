@@ -1,4 +1,5 @@
 import { createContext } from "react";
 
 const ThemeContext = createContext();
-export { ThemeContext };
+const UserContext = createContext()
+export { ThemeContext , UserContext };
