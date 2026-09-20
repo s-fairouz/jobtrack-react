@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavbarContext } from "../context/index.js";
+import { ThemeContext } from "../context/index.js";
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(true);
@@ -11,5 +11,5 @@ export const ThemeProvider = ({ children }) => {
     theme,
     toggleTheme,
   };
-  return <NavbarContext value={value}>{children}</NavbarContext>;
+  return <ThemeContext value={value}>{children}</ThemeContext>;
 };

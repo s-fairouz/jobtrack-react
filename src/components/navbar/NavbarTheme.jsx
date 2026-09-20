@@ -1,8 +1,8 @@
 import { BsSun, BsMoon } from "react-icons/bs";
-import { useNavbar } from "../../hooks/useNavbar.js";
+import { useTheme } from "../../hooks/useTheme.js";
 
 const NavbarTheme = () => {
-  const context = useNavbar();
+  const context = useTheme();
   const { theme, toggleTheme } = context;
   return (
     <button

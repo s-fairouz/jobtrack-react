@@ -1,5 +1,4 @@
 import { createContext } from "react";
 
-
-const NavbarContext = createContext();
-export { NavbarContext };
+const ThemeContext = createContext();
+export { ThemeContext };

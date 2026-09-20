@@ -1,8 +1,8 @@
 import { use } from "react";
-import { NavbarContext } from "../context/index.js";
+import {  ThemeContext } from "../context/index.js";
 
-export const useNavbar = () => {
-  const context = use(NavbarContext);
+export const useTheme = () => {
+  const context = use(ThemeContext);
   if (!context) throw new Error("useNavbar must be used within a NavbarProvider");
   return context;
 };
