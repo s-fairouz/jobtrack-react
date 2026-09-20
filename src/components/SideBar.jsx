@@ -1,10 +1,8 @@
-import React from "react";
-import { BsBriefcase, BsHeart, BsGear } from "react-icons/bs";
+import { BsBriefcase, BsGear, BsHeart } from "react-icons/bs";
 
 const SideBar = ({ isOpen, onClose }) => {
   return (
     <>
-      {/* Mobile Backdrop */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-slate-900/50 backdrop-blur-xs z-40 md:hidden"
@@ -13,10 +11,12 @@ const SideBar = ({ isOpen, onClose }) => {
         />
       )}
 
-      {/* Sidebar Container */}
+     
       <aside
         className={`fixed inset-y-0 left-0 z-50 w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col transition-transform duration-300 ease-in-out md:static md:translate-x-0 ${
-          isOpen ? "translate-x-0 shadow-2xl" : "-translate-x-full md:shadow-none"
+          isOpen
+            ? "translate-x-0 shadow-2xl"
+            : "-translate-x-full md:shadow-none"
         }`}
       >
         {/* Brand */}
@@ -25,12 +25,16 @@ const SideBar = ({ isOpen, onClose }) => {
             <BsBriefcase size={18} />
           </div>
           <span className="text-lg font-bold tracking-tight text-slate-900 dark:text-white">
-            Job<span className="text-indigo-600 dark:text-indigo-400">Track</span>
+            Job
+            <span className="text-indigo-600 dark:text-indigo-400">Track</span>
           </span>
         </div>
 
         {/* Navigation Links */}
-        <nav className="flex-1 overflow-y-auto p-4 space-y-1" aria-label="Main navigation">
+        <nav
+          className="flex-1 overflow-y-auto p-4 space-y-1"
+          aria-label="Main navigation"
+        >
           <div className="px-3 py-2 text-[10px] font-bold tracking-wider uppercase text-slate-400 dark:text-slate-500">
             Navigation
           </div>
@@ -44,7 +48,7 @@ const SideBar = ({ isOpen, onClose }) => {
             <span>Job List</span>
           </div>
 
-          {/* Favourites */}
+      
           <div
             id="nav-favourites"
             className="flex items-center justify-between px-3 py-2.5 rounded-xl font-medium text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-pointer"
@@ -59,7 +63,7 @@ const SideBar = ({ isOpen, onClose }) => {
           </div>
         </nav>
 
-        {/* Footer */}
+    
         <div className="p-4 border-t border-slate-200 dark:border-slate-800 shrink-0">
           <div className="flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-pointer">
             <BsGear size={18} />
