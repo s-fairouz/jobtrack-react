@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Navbar from "./components/navbar/Navbar";
 import SideBar from "./components/SideBar";
 import JobList from "./pages/JobList";
 import { useTheme } from "./hooks/useTheme.js";
+import { UserSkeleton } from "./components/navbar/Skeletons.jsx";
+import { ErrorBoundary } from "react-error-boundary";
+import { ErrorFallback } from "./components/ErrorFallback.jsx";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,16 +22,28 @@ function App() {
       </div>
 
       {/* Main Content Area */}
-      <div className="flex flex-col flex-1 overflow-hidden relative">
-        <Navbar
-          menuOpen={menuOpen}
-          onMenuToggle={() => setMenuOpen((prev) => !prev)}
-        />
+      <ErrorBoundary
+        FallbackComponent={<ErrorFallback />}
+        onReset={() => {
+          console.log("Error boundary reset triggered!");
+        }}
+      >
+        <Suspense fallback={<UserSkeleton />}>
+          <div className="flex flex-col flex-1 overflow-hidden relative">
+            <Navbar
+              menuOpen={menuOpen}
+              onMenuToggle={() => setMenuOpen((prev) => !prev)}
+            />
 
-        <main className="flex-1 overflow-y-auto p-4 md:p-8" id="main-content">
-          <JobList />
-        </main>
-      </div>
+            <main
+              className="flex-1 overflow-y-auto p-4 md:p-8"
+              id="main-content"
+            >
+              <JobList />
+            </main>
+          </div>
+        </Suspense>
+      </ErrorBoundary>
     </div>
   );
 }

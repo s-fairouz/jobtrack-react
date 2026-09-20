@@ -1,15 +1,16 @@
+import { use } from "react";
 import { UserContext } from "../context/index.js";
 import { useLocalStorage } from "../hooks/useLocalStorage.js";
+import { getJobResources } from "../resources/index.js";
 
 const UserProvider = ({ children }) => {
-  const [user, updateUser] = useLocalStorage("user", {
-    initials: "JD",
-    name: "John Doe",
-    role: "Job Seeker",
-  });
+  const { userPromise } = getJobResources();
+  const user = use(userPromise);
+ 
+  const [loggedUser, updateUser] = useLocalStorage("user", user);
 
   const value = {
-    user,
+    user: loggedUser,
     updateUser,
   };
 
