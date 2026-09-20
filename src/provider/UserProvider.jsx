@@ -5,12 +5,11 @@ import { getJobResources } from "../resources/index.js";
 
 const UserProvider = ({ children }) => {
   const { userPromise } = getJobResources();
-  const user = use(userPromise);
- 
-  const [loggedUser, updateUser] = useLocalStorage("user", user);
+  const fetchedUser = use(userPromise);
+  const [user, updateUser] = useLocalStorage("user", fetchedUser);
 
   const value = {
-    user: loggedUser,
+    user,
     updateUser,
   };
 

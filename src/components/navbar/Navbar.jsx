@@ -11,11 +11,8 @@ const Navbar = ({ menuOpen, onMenuToggle }) => {
 
       <div className="flex items-center gap-2 md:gap-3">
         <NavbarTheme />
-
         <NavbarNotification />
-
         <div className="h-6 w-px bg-slate-200 dark:bg-slate-800 mx-1" />
-
         <User />
       </div>
 
