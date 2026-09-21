@@ -7,6 +7,7 @@ import SideBar from "./components/SideBar";
 import JobList from "./pages/JobList";
 import UserProvider from "./provider/UserProvider.jsx";
 import { createJobResources } from "./resources/index.js";
+import { Outlet } from "react-router";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -33,7 +34,8 @@ function App() {
                 className="flex-1 overflow-y-auto p-4 md:p-8"
                 id="main-content"
               >
-                <JobList />
+                {/* <JobList /> */}
+                <Outlet />
               </main>
             </div>
           </UserProvider>
