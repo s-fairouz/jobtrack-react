@@ -56,23 +56,15 @@ export function ErrorFallback({ error, resetErrorBoundary }) {
           )}
         </div>
 
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center gap-3">
+      
+        <div>
           <button
             type="button"
             onClick={resetErrorBoundary}
-            className="w-full sm:flex-1 py-3 px-5 rounded-xl font-semibold text-sm bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white shadow-lg shadow-indigo-500/25 active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full py-3 px-5 rounded-xl font-semibold text-sm bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white shadow-lg shadow-indigo-500/25 active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer"
           >
             <BsArrowCounterclockwise className="text-base" />
             <span>Try Again</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => window.location.reload()}
-            className="w-full sm:w-auto py-3 px-5 rounded-xl font-medium text-sm text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
-          >
-            Reload Page
           </button>
         </div>
       </div>
