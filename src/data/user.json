@@ -1,0 +1,11 @@
+{
+  "id": "u-001",
+  "name": "John Doe",
+  "role": "Job Seeker",
+  "initials": "JD",
+  "email": "john.doe@email.com",
+  "location": "Berlin, Germany",
+  "resumeUrl": "/resume/john-doe.pdf",
+  "preferredRoles": ["Frontend Developer", "React Developer"],
+  "portfolioUrl": "https://github.com/johndoe"
+}

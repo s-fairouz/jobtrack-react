@@ -1,9 +1,12 @@
 import { useUser } from "../hooks/useUser.js";
 
 const User = () => {
+  
   const context = useUser();
   const {user } = context;
-  console.log("stored value", user);
+  
+
+  
   return (
     <div
       id="header-user-chip"

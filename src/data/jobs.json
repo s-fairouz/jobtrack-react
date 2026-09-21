@@ -1,0 +1,41 @@
+[
+  {
+    "id": "job-101",
+    "title": "Frontend Developer",
+    "company": "Nova Labs",
+    "location": "Remote",
+    "jobType": "Full-time",
+    "category": "Engineering",
+    "salary": "$90k - $120k",
+    "postedAt": "2026-09-18",
+    "description": "Build responsive user interfaces using React and modern web tooling.",
+    "tags": ["React", "TypeScript", "UI"],
+    "isRemote": true
+  },
+  {
+    "id": "job-102",
+    "title": "Product Designer",
+    "company": "Northwind Studio",
+    "location": "London",
+    "jobType": "Hybrid",
+    "category": "Design",
+    "salary": "$80k - $95k",
+    "postedAt": "2026-09-15",
+    "description": "Design polished digital products and improve user flows.",
+    "tags": ["Figma", "UX", "Design Systems"],
+    "isRemote": false
+  },
+  {
+    "id": "job-103",
+    "title": "React Engineer",
+    "company": "Blue Peak",
+    "location": "Remote",
+    "jobType": "Contract",
+    "category": "Engineering",
+    "salary": "$70k - $100k",
+    "postedAt": "2026-09-10",
+    "description": "Work on dashboards, performance optimization, and component architecture.",
+    "tags": ["React", "Performance", "Frontend"],
+    "isRemote": true
+  }
+]

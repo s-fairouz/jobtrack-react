@@ -1,34 +1,44 @@
-import { useState } from "react";
+import { Suspense, useState } from "react";
+import { ErrorBoundary } from "react-error-boundary";
+import { ErrorFallback } from "./components/ErrorFallback.jsx";
 import Navbar from "./components/navbar/Navbar";
+import { FullAppShellSkeleton } from "./components/navbar/Skeletons.jsx";
 import SideBar from "./components/SideBar";
 import JobList from "./pages/JobList";
-import { useTheme } from "./hooks/useTheme.js";
+import UserProvider from "./provider/UserProvider.jsx";
+import { createJobResources } from "./resources/index.js";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const context = useTheme();
-  const { theme } = context;
 
   return (
-    <div
-      className={`flex h-screen overflow-hidden ${theme ? "dark" : ""} bg-slate-100 dark:bg-slate-950 font-sans text-slate-900 dark:text-slate-100`}
-    >
-      {/* Sidebar — Visible on Desktop (md:flex), hidden on Mobile */}
+    <div className="flex h-screen overflow-hidden bg-slate-100 dark:bg-slate-950 font-sans text-slate-900 dark:text-slate-100">
       <div className="hidden md:flex">
-        <SideBar />
+        <SideBar isOpen={false} onClose={() => setMenuOpen(false)} />
       </div>
 
-      {/* Main Content Area */}
-      <div className="flex flex-col flex-1 overflow-hidden relative">
-        <Navbar
-          menuOpen={menuOpen}
-          onMenuToggle={() => setMenuOpen((prev) => !prev)}
-        />
+      <ErrorBoundary
+        FallbackComponent={ErrorFallback}
+        onReset={() => createJobResources()}
+      >
+        <Suspense fallback={<FullAppShellSkeleton />}>
+          <UserProvider>
+            <div className="flex flex-col flex-1 overflow-hidden relative">
+              <Navbar
+                menuOpen={menuOpen}
+                onMenuToggle={() => setMenuOpen((prev) => !prev)}
+              />
 
-        <main className="flex-1 overflow-y-auto p-4 md:p-8" id="main-content">
-          <JobList />
-        </main>
-      </div>
+              <main
+                className="flex-1 overflow-y-auto p-4 md:p-8"
+                id="main-content"
+              >
+                <JobList />
+              </main>
+            </div>
+          </UserProvider>
+        </Suspense>
+      </ErrorBoundary>
     </div>
   );
 }
