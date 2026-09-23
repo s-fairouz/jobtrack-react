@@ -1,5 +1,5 @@
 import { BsBriefcase, BsGear, BsHeart } from "react-icons/bs";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const SideBar = ({ isOpen, onClose }) => {
   return (
@@ -20,7 +20,11 @@ const SideBar = ({ isOpen, onClose }) => {
         }`}
       >
         {/* Brand */}
-        <div className="h-16 px-6 border-b border-slate-200 dark:border-slate-800 flex items-center gap-3 shrink-0">
+        <Link
+          to="/jobs"
+          end
+          className="h-16 px-6 border-b border-slate-200 dark:border-slate-800 flex items-center gap-3 shrink-0"
+        >
           <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-pink-500 flex items-center justify-center text-white shadow-md shadow-indigo-500/30">
             <BsBriefcase size={18} />
           </div>
@@ -28,7 +32,7 @@ const SideBar = ({ isOpen, onClose }) => {
             Job
             <span className="text-indigo-600 dark:text-indigo-400">Track</span>
           </span>
-        </div>
+        </Link>
 
         {/* Navigation Links */}
         <nav
@@ -39,9 +43,9 @@ const SideBar = ({ isOpen, onClose }) => {
             Navigation
           </div>
 
-          {/* Job List — Active state */}
+       
           <NavLink
-            to="/"
+            to="/jobs"
             className={({ isActive }) =>
               `flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm transition-colors ${
                 isActive

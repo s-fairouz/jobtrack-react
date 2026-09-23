@@ -12,14 +12,9 @@ export const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       { index: true, element: <JobList /> },
-      {
-        path: "favorites",
-        element: <FavoriteJobs />,
-      },
-      {
-        path: "jobs/:id",
-        element: <JobItem />,
-      },
+      { path: "jobs", element: <JobList /> },
+      { path: "jobs/:id", element: <JobItem /> },
+      { path: "favorites", element: <FavoriteJobs /> },
       { path: "*", element: <NotFound /> },
     ],
   },

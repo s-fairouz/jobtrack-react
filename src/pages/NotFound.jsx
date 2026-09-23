@@ -13,7 +13,7 @@ const NotFound = () => {
         Sorry, the page you are looking for doesn't exist or has been moved.
       </p>
       <Link
-        to="/"
+        to="/jobs"
         className="px-5 py-2.5 rounded-xl font-medium text-sm bg-indigo-600 hover:bg-indigo-700 text-white transition-colors shadow-md shadow-indigo-500/20"
       >
         Back to Job List
