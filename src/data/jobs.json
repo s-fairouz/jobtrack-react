@@ -1,41 +1,134 @@
 [
   {
     "id": "job-101",
-    "title": "Frontend Developer",
+    "title": "Senior Frontend Developer",
     "company": "Nova Labs",
-    "location": "Remote",
+    "companyLogo": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=120&auto=format&fit=crop&q=80",
+    "location": "San Francisco, CA",
     "jobType": "Full-time",
     "category": "Engineering",
-    "salary": "$90k - $120k",
-    "postedAt": "2026-09-18",
-    "description": "Build responsive user interfaces using React and modern web tooling.",
-    "tags": ["React", "TypeScript", "UI"],
-    "isRemote": true
+    "salary": "$130k - $160k",
+    "postedAt": "2026-09-24",
+    "description": "Build high-performance, accessible user interfaces using React 19, TypeScript, and modern CSS architectures.",
+    "requirements": [
+      "5+ years of experience with modern JavaScript / TypeScript",
+      "Deep expertise in React ecosystem & state management",
+      "Proficiency with TailwindCSS and CSS animations",
+      "Experience with frontend build toolchains (Vite, Webpack)"
+    ],
+    "tags": ["React", "TypeScript", "TailwindCSS", "Next.js"],
+    "isRemote": true,
+    "featured": true,
+    "applicantsCount": 42
   },
   {
     "id": "job-102",
-    "title": "Product Designer",
+    "title": "Lead Product Designer",
     "company": "Northwind Studio",
-    "location": "London",
+    "companyLogo": "https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=120&auto=format&fit=crop&q=80",
+    "location": "London, UK",
     "jobType": "Hybrid",
     "category": "Design",
-    "salary": "$80k - $95k",
-    "postedAt": "2026-09-15",
-    "description": "Design polished digital products and improve user flows.",
-    "tags": ["Figma", "UX", "Design Systems"],
-    "isRemote": false
+    "salary": "$95k - $120k",
+    "postedAt": "2026-09-22",
+    "description": "Lead user experience research, design system evolution, and product interface craftsmanship for enterprise SaaS products.",
+    "requirements": [
+      "4+ years designing complex Web/Mobile products",
+      "Mastery of Figma, design token architecture, and prototyping",
+      "Strong background in user testing and data-informed design",
+      "Portfolio showcasing end-to-end design thinking"
+    ],
+    "tags": ["Figma", "UX/UI", "Design Systems", "User Research"],
+    "isRemote": false,
+    "featured": true,
+    "applicantsCount": 28
   },
   {
     "id": "job-103",
-    "title": "React Engineer",
-    "company": "Blue Peak",
-    "location": "Remote",
+    "title": "Fullstack React & Node Engineer",
+    "company": "Blue Peak Digital",
+    "companyLogo": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=120&auto=format&fit=crop&q=80",
+    "location": "New York, NY",
     "jobType": "Contract",
     "category": "Engineering",
-    "salary": "$70k - $100k",
-    "postedAt": "2026-09-10",
-    "description": "Work on dashboards, performance optimization, and component architecture.",
-    "tags": ["React", "Performance", "Frontend"],
-    "isRemote": true
+    "salary": "$80/hr - $110/hr",
+    "postedAt": "2026-09-20",
+    "description": "Architect scalable GraphQL APIs and real-time dashboard experiences using React and Node.js microservices.",
+    "requirements": [
+      "3+ years with Node.js, Express, and PostgreSQL/MongoDB",
+      "Hands-on experience with WebSocket/real-time streaming data",
+      "Strong understanding of React Server Components and state",
+      "Familiarity with Docker and AWS deployment pipelines"
+    ],
+    "tags": ["React", "Node.js", "GraphQL", "PostgreSQL"],
+    "isRemote": true,
+    "featured": false,
+    "applicantsCount": 19
+  },
+  {
+    "id": "job-104",
+    "title": "AI Platform Engineer",
+    "company": "Cognitive AI",
+    "companyLogo": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=120&auto=format&fit=crop&q=80",
+    "location": "Austin, TX",
+    "jobType": "Full-time",
+    "category": "Engineering",
+    "salary": "$150k - $190k",
+    "postedAt": "2026-09-25",
+    "description": "Build infrastructure and client SDKs for integrating Large Language Models and agentic workflows into web applications.",
+    "requirements": [
+      "Experience with Python, PyTorch, and JavaScript/TypeScript SDKs",
+      "Familiarity with vector databases (Pinecone, Qdrant) and RAG pipelines",
+      "Background in high-concurrency backend services",
+      "Passion for cutting-edge AI software development"
+    ],
+    "tags": ["Python", "TypeScript", "LLM", "AI/ML", "Vector DB"],
+    "isRemote": true,
+    "featured": true,
+    "applicantsCount": 65
+  },
+  {
+    "id": "job-105",
+    "title": "Senior DevOps & Cloud Architect",
+    "company": "Aether Infrastructure",
+    "companyLogo": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=120&auto=format&fit=crop&q=80",
+    "location": "Berlin, Germany",
+    "jobType": "Full-time",
+    "category": "DevOps",
+    "salary": "€90k - €115k",
+    "postedAt": "2026-09-21",
+    "description": "Manage multi-region Kubernetes clusters, automated Terraform pipelines, and zero-downtime CI/CD deployments.",
+    "requirements": [
+      "Deep experience with Kubernetes, Helm, and AWS/GCP",
+      "Infrastructure as Code mastery with Terraform / Pulumi",
+      "Experience with Prometheus, Grafana, and Datadog monitoring",
+      "Strong Linux system administration & security compliance knowledge"
+    ],
+    "tags": ["Kubernetes", "AWS", "Terraform", "CI/CD"],
+    "isRemote": true,
+    "featured": false,
+    "applicantsCount": 15
+  },
+  {
+    "id": "job-106",
+    "title": "Product Growth Manager",
+    "company": "Veloce Apps",
+    "companyLogo": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=120&auto=format&fit=crop&q=80",
+    "location": "Toronto, Canada",
+    "jobType": "Hybrid",
+    "category": "Product",
+    "salary": "$105k - $135k",
+    "postedAt": "2026-09-19",
+    "description": "Drive user activation, conversion funnels, and retention strategies across mobile and desktop applications.",
+    "requirements": [
+      "3+ years in product management or growth engineering",
+      "Data-driven mindset with Mixpanel, Amplitude, or Google Analytics expertise",
+      "Experience executing A/B experiments and user onboarding flows",
+      "Excellent cross-functional leadership skills"
+    ],
+    "tags": ["Product", "Growth", "Analytics", "A/B Testing"],
+    "isRemote": false,
+    "featured": false,
+    "applicantsCount": 31
   }
 ]
