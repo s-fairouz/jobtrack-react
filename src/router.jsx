@@ -4,17 +4,38 @@ import JobList from "./pages/JobList.jsx";
 import FavoriteJobs from "./pages/FavoriteJobs.jsx";
 import JobItem from "./pages/JobItem.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import Settings from "./pages/Settings.jsx";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     errorElement: <NotFound />,
+    handle: { breadcrumb: "Home" },
     children: [
       { index: true, element: <JobList /> },
-      { path: "jobs", element: <JobList /> },
-      { path: "jobs/:id", element: <JobItem /> },
-      { path: "favorites", element: <FavoriteJobs /> },
+      {
+        path: "jobs",
+        element: <JobList />,
+        handle: { breadcrumb: "Jobs" },
+      },
+      {
+        path: "jobs/:id",
+        element: <JobItem />,
+        handle: {
+          breadcrumb: (data, params) => data?.title ?? `Job ${params.id}`,
+        },
+      },
+      {
+        path: "favorites",
+        element: <FavoriteJobs />,
+        handle: { breadcrumb: "Favorites" },
+      },
+      {
+        path: "jobs/settings",
+        element: <Settings />,
+        handle: { breadcrumb: "Settings" },
+      },
       { path: "*", element: <NotFound /> },
     ],
   },
