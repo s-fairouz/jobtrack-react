@@ -1,9 +1,11 @@
-import { BsBriefcase, BsGear, BsHeart } from "react-icons/bs";
+import { BsBriefcase, BsGear, BsHeart, BsSendCheck } from "react-icons/bs";
 import { Link, NavLink } from "react-router";
 import { useFavorites } from "../hooks/useFavorites.js";
+import { useAppliedJobs } from "../hooks/useAppliedJobs.js";
 
 const SideBar = ({ isOpen, onClose }) => {
   const { count: favoritesCount } = useFavorites();
+  const { appliedCount } = useAppliedJobs();
 
   return (
     <>
@@ -22,7 +24,6 @@ const SideBar = ({ isOpen, onClose }) => {
             : "-translate-x-full md:shadow-none"
         }`}
       >
-        {/* Brand */}
         <Link
           to="/jobs"
           className="h-16 px-6 border-b border-slate-200/80 dark:border-slate-800 flex items-center gap-3 shrink-0"
@@ -36,7 +37,6 @@ const SideBar = ({ isOpen, onClose }) => {
           </span>
         </Link>
 
-        {/* Navigation Links */}
         <nav
           className="flex-1 overflow-y-auto p-4 space-y-1.5"
           aria-label="Main navigation"
@@ -81,9 +81,30 @@ const SideBar = ({ isOpen, onClose }) => {
               </span>
             )}
           </NavLink>
+
+          <NavLink
+            to="/applied"
+            onClick={onClose}
+            className={({ isActive }) =>
+              `flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium text-sm transition-all ${
+                isActive
+                  ? "bg-indigo-600 dark:bg-indigo-500 text-white shadow-md shadow-indigo-500/20 font-semibold"
+                  : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/80 hover:text-slate-900 dark:hover:text-white"
+              }`
+            }
+          >
+            <div className="flex items-center gap-3">
+              <BsSendCheck size={18} />
+              <span>Applied Jobs</span>
+            </div>
+            {appliedCount > 0 && (
+              <span className="px-2 py-0.5 text-xs font-bold rounded-full bg-emerald-500 text-white shadow-xs">
+                {appliedCount}
+              </span>
+            )}
+          </NavLink>
         </nav>
 
-        {/* Footer / Settings */}
         <div className="p-4 border-t border-slate-200/80 dark:border-slate-800 shrink-0">
           <NavLink
             to="/jobs/settings"

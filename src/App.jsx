@@ -34,7 +34,7 @@ function App() {
                 className="flex-1 overflow-y-auto p-4 md:p-8"
                 id="main-content"
               >
-                {/* <JobList /> */}
+            
                 <Outlet />
               </main>
             </div>

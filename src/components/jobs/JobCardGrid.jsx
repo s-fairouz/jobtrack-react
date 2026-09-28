@@ -8,7 +8,7 @@ import {
 import JobTypeBadge from "./JobTypeBadge.jsx";
 import FavoriteButton from "./FavoriteButton.jsx";
 
-const JobCardGrid = ({ job, isFavorite, onToggleFavorite }) => {
+const JobCardGrid = ({ job, isFavorite, isApplied, onToggleFavorite }) => {
   const {
     id,
     title,
@@ -67,6 +67,11 @@ const JobCardGrid = ({ job, isFavorite, onToggleFavorite }) => {
             {title}
           </Link>
           <div className="flex flex-wrap items-center gap-1.5 mt-2">
+            {isApplied && (
+              <span className="px-2 py-0.5 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800 flex items-center gap-1">
+                ✓ Applied
+              </span>
+            )}
             <JobTypeBadge jobType={jobType} />
             {isRemote && (
               <span className="px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20 flex items-center gap-1">

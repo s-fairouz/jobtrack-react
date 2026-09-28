@@ -3,18 +3,19 @@ import { Link } from "react-router";
 import { BsHeartFill, BsBriefcase, BsArrowRight } from "react-icons/bs";
 import { getJobResources } from "../resources/index.js";
 import { useFavorites } from "../hooks/useFavorites.js";
+import { useAppliedJobs } from "../hooks/useAppliedJobs.js";
 import JobCardGrid from "../components/jobs/JobCardGrid.jsx";
 
 const FavoriteJobs = () => {
   const { jobsPromise } = getJobResources();
   const jobs = use(jobsPromise) || [];
   const { favoriteIds, isFavorite, toggleFavorite } = useFavorites();
+  const { isApplied } = useAppliedJobs();
 
   const favoriteJobs = jobs.filter((job) => favoriteIds.includes(job.id));
 
   return (
     <div className="space-y-6 max-w-7xl mx-auto pb-8">
-      {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 p-6 rounded-3xl shadow-xs">
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 rounded-2xl bg-rose-50 dark:bg-rose-950/40 text-rose-500 border border-rose-200 dark:border-rose-900 flex items-center justify-center shrink-0">
@@ -39,7 +40,6 @@ const FavoriteJobs = () => {
         </Link>
       </div>
 
-      {/* Jobs Grid / Empty state */}
       {favoriteJobs.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {favoriteJobs.map((job) => (
@@ -47,6 +47,7 @@ const FavoriteJobs = () => {
               key={job.id}
               job={job}
               isFavorite={isFavorite(job.id)}
+              isApplied={isApplied(job.id)}
               onToggleFavorite={() => toggleFavorite(job.id)}
             />
           ))}

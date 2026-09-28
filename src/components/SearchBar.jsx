@@ -34,7 +34,6 @@ const SearchBar = ({
 
   return (
     <div className="flex flex-col gap-4 bg-white dark:bg-slate-900 p-4 md:p-5 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-xs transition-colors">
-      {/* Main Search Row */}
       <div className="flex flex-col md:flex-row items-center gap-3">
         <div className="relative flex-1 w-full">
           <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 dark:text-slate-500">
@@ -84,7 +83,6 @@ const SearchBar = ({
         </div>
       </div>
 
-      {/* Second Row: Quick Category Badges & Remote Switch */}
       <div className="flex items-center justify-between gap-3 pt-3 border-t border-slate-100 dark:border-slate-800/80 flex-wrap">
         <div className="flex items-center gap-2 flex-wrap text-xs">
           <span className="text-slate-500 dark:text-slate-400 font-medium mr-1">

@@ -16,7 +16,7 @@ const Navbar = ({ menuOpen, onMenuToggle }) => {
         <User />
       </div>
 
-      {menuOpen && <MenuDropdown menuOpen={menuOpen} />}
+      {menuOpen && <MenuDropdown onMenuToggle={onMenuToggle} />}
     </header>
   );
 };

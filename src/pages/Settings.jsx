@@ -24,7 +24,6 @@ const Settings = () => {
       </div>
 
       <div className="space-y-6">
-        {/* Theme Settings Card */}
         <div className="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 md:p-8 shadow-xs space-y-4">
           <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
             Appearance & Theme
@@ -34,7 +33,6 @@ const Settings = () => {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-            {/* Light Mode Box */}
             <div
               onClick={() => {
                 if (theme) toggleTheme();
@@ -57,7 +55,6 @@ const Settings = () => {
               {!theme && <BsCheckCircleFill className="text-indigo-600" size={20} />}
             </div>
 
-            {/* Dark Mode Box */}
             <div
               onClick={() => {
                 if (!theme) toggleTheme();
@@ -82,7 +79,6 @@ const Settings = () => {
           </div>
         </div>
 
-        {/* User Profile Summary Card */}
         {user && (
           <div className="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 md:p-8 shadow-xs space-y-4">
             <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">

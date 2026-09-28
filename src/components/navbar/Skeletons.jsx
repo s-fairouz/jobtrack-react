@@ -13,13 +13,11 @@ export const UserSkeleton = () => {
 export const NavbarSkeleton = () => {
   return (
     <header className="relative z-30 h-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 md:px-6 flex items-center justify-between shadow-xs shrink-0 animate-pulse">
-      {/* Title & Mobile Toggle Skeleton */}
       <div className="flex items-center gap-3">
         <div className="w-8 h-8 rounded-lg bg-slate-200 dark:bg-slate-800 md:hidden" />
         <div className="h-5 w-32 bg-slate-200 dark:bg-slate-800 rounded-md" />
       </div>
 
-      {/* Right Controls Skeleton */}
       <div className="flex items-center gap-2 md:gap-3">
         <div className="w-9 h-9 rounded-lg bg-slate-200 dark:bg-slate-800" />
         <div className="w-9 h-9 rounded-lg bg-slate-200 dark:bg-slate-800" />
@@ -33,7 +31,6 @@ export const NavbarSkeleton = () => {
 export const JobListSkeleton = () => {
   return (
     <div className="space-y-6 animate-pulse">
-      {/* Header section skeleton */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <div className="h-7 w-44 bg-slate-300 dark:bg-slate-800 rounded-lg mb-2" />
@@ -42,7 +39,6 @@ export const JobListSkeleton = () => {
         <div className="w-36 h-10 bg-slate-200 dark:bg-slate-800 rounded-xl" />
       </div>
 
-      {/* Search & Filter bar skeleton */}
       <div className="flex flex-col sm:flex-row items-center gap-3">
         <div className="w-full sm:flex-1 h-11 bg-slate-200 dark:bg-slate-800 rounded-xl" />
         <div className="flex items-center gap-2 w-full sm:w-auto">
@@ -51,7 +47,6 @@ export const JobListSkeleton = () => {
         </div>
       </div>
 
-      {/* Cards Grid skeleton */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {[1, 2, 3, 4, 5, 6].map((i) => (
           <div
