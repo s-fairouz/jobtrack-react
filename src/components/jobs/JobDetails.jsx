@@ -79,7 +79,6 @@ const JobDetails = ({
         Back to Jobs
       </Link>
 
-      {/* Hero */}
       <div className="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 md:p-8 shadow-sm relative overflow-hidden">
         {featured && (
           <div className="absolute top-0 right-0 bg-gradient-to-l from-amber-500 to-amber-400 text-slate-950 font-extrabold text-[11px] uppercase tracking-wider px-4 py-1 rounded-bl-xl shadow-xs flex items-center gap-1">
@@ -176,7 +175,6 @@ const JobDetails = ({
         </div>
       </div>
 
-      {/* Body */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 space-y-6">
           <Section title="Job Description">

@@ -3,7 +3,6 @@ import { FavoritesContext } from "../context/index.js";
 import { useLocalStorage } from "../hooks/useLocalStorage.js";
 
 export const FavoritesProvider = ({ children }) => {
-  // Real user state starts empty []
   const [persistedFavoriteIds, setPersistedFavoriteIds] = useLocalStorage(
     "favorite_jobs",
     []

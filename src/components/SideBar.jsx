@@ -24,7 +24,6 @@ const SideBar = ({ isOpen, onClose }) => {
             : "-translate-x-full md:shadow-none"
         }`}
       >
-        {/* Brand */}
         <Link
           to="/jobs"
           className="h-16 px-6 border-b border-slate-200/80 dark:border-slate-800 flex items-center gap-3 shrink-0"
@@ -38,7 +37,6 @@ const SideBar = ({ isOpen, onClose }) => {
           </span>
         </Link>
 
-        {/* Navigation Links */}
         <nav
           className="flex-1 overflow-y-auto p-4 space-y-1.5"
           aria-label="Main navigation"
@@ -107,7 +105,6 @@ const SideBar = ({ isOpen, onClose }) => {
           </NavLink>
         </nav>
 
-        {/* Footer / Settings */}
         <div className="p-4 border-t border-slate-200/80 dark:border-slate-800 shrink-0">
           <NavLink
             to="/jobs/settings"

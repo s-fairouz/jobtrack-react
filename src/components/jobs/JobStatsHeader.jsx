@@ -16,11 +16,9 @@ const JobStatsHeader = ({ jobs, favoritesCount }) => {
 
   return (
     <div className="bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-3xl p-6 md:p-8 shadow-xs relative overflow-hidden transition-colors">
-      {/* Decorative subtle ambient backdrop glow */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-indigo-500/10 via-purple-500/5 to-transparent rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-        {/* Left Column: Heading & Description */}
         <div className="space-y-2.5 max-w-xl">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-indigo-50 dark:bg-indigo-950/70 text-indigo-700 dark:text-indigo-300 border border-indigo-200/80 dark:border-indigo-800/80 uppercase tracking-wider">
             <span className="w-2 h-2 rounded-full bg-indigo-600 dark:bg-indigo-400 animate-pulse" />
@@ -35,7 +33,6 @@ const JobStatsHeader = ({ jobs, favoritesCount }) => {
           </p>
         </div>
 
-        {/* Right Column: High-Contrast Stat Cards */}
         <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5 shrink-0">
           <div className="bg-slate-50/80 dark:bg-slate-800/80 rounded-2xl p-3 border border-slate-200/80 dark:border-slate-700/60 text-center transition-all">
             <div className="flex items-center justify-center gap-1.5 text-indigo-600 dark:text-indigo-400 mb-1">

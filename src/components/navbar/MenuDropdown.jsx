@@ -19,7 +19,6 @@ const MenuDropdown = ({ onMenuToggle }) => {
           Navigation
         </div>
 
-        {/* Job List */}
         <NavLink
           to="/jobs"
           onClick={onMenuToggle}
@@ -35,7 +34,6 @@ const MenuDropdown = ({ onMenuToggle }) => {
           <span>Job List</span>
         </NavLink>
 
-        {/* Favourites */}
         <NavLink
           to="/favorites"
           onClick={onMenuToggle}
@@ -58,7 +56,6 @@ const MenuDropdown = ({ onMenuToggle }) => {
           )}
         </NavLink>
 
-        {/* Applied */}
         <NavLink
           to="/applied"
           onClick={onMenuToggle}
@@ -83,7 +80,6 @@ const MenuDropdown = ({ onMenuToggle }) => {
 
         <div className="h-px bg-slate-200 dark:bg-slate-800 my-1" />
 
-        {/* Settings */}
         <NavLink
           to="/jobs/settings"
           onClick={onMenuToggle}

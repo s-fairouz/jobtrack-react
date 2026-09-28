@@ -3,7 +3,6 @@ import { AppliedJobsContext } from "../context/index.js";
 import { useLocalStorage } from "../hooks/useLocalStorage.js";
 
 export const AppliedJobsProvider = ({ children }) => {
-  // Array of applications: { jobId: string, appliedAt: string, notes?: string }
   const [persistedApplications, setPersistedApplications] = useLocalStorage(
     "applied_jobs",
     []
@@ -13,7 +12,6 @@ export const AppliedJobsProvider = ({ children }) => {
     ? persistedApplications
     : [];
 
-  // React 19 useOptimistic for instant application state updates
   const [optimisticApplications, setOptimisticApplications] = useOptimistic(
     safePersisted,
     (currentList, newApplication) => {
@@ -34,10 +32,8 @@ export const AppliedJobsProvider = ({ children }) => {
     };
 
     startTransition(async () => {
-      // Optimistic update
       setOptimisticApplications(newApplication);
 
-      // Persist
       setPersistedApplications((prev) => {
         const current = Array.isArray(prev) ? prev : [];
         if (current.some((app) => app.jobId === jobId)) {

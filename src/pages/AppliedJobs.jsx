@@ -15,7 +15,6 @@ const AppliedJobs = () => {
   const jobs = use(jobsPromise) || [];
   const { appliedJobs, withdrawApplication } = useAppliedJobs();
 
-  // Map application objects to jobs
   const appliedListWithJobs = appliedJobs
     .map((app) => ({
       application: app,
@@ -25,7 +24,7 @@ const AppliedJobs = () => {
 
   return (
     <div className="space-y-6 max-w-7xl mx-auto pb-8">
-      {/* Header */}
+   
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 p-6 md:p-8 rounded-3xl shadow-xs">
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-900 flex items-center justify-center shrink-0">
@@ -58,7 +57,7 @@ const AppliedJobs = () => {
         </Link>
       </div>
 
-      {/* Grid or Empty State */}
+  
       {appliedListWithJobs.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {appliedListWithJobs.map(({ application, job }) => (

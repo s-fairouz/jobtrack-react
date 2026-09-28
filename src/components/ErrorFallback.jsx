@@ -12,7 +12,6 @@ export function ErrorFallback({ error, resetErrorBoundary }) {
   return (
     <div className="flex-1 flex items-center justify-center p-4 md:p-8 min-h-[600px] w-full">
       <div className="w-full max-w-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl p-6 md:p-8 text-slate-900 dark:text-slate-100 transition-all">
-        {/* Top Badge & Icon */}
         <div className="flex items-center gap-3 mb-5">
           <div className="w-12 h-12 rounded-2xl bg-rose-500/10 dark:bg-rose-500/20 border border-rose-500/20 text-rose-600 dark:text-rose-400 flex items-center justify-center text-xl shrink-0 shadow-xs">
             <BsExclamationTriangleFill />
@@ -27,13 +26,11 @@ export function ErrorFallback({ error, resetErrorBoundary }) {
           </div>
         </div>
 
-        {/* User-friendly message */}
         <p className="text-sm text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
           We ran into an unexpected issue while fetching application resources.
           Click below to attempt reloading the data.
         </p>
 
-        {/* Collapsible Error Technical Details */}
         <div className="mb-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/70 overflow-hidden">
           <button
             type="button"
