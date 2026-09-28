@@ -10,9 +10,21 @@ export const fetchUser = async () => {
   const response = await fetch(`${API_URL}/user`);
 
   if (!response.ok) {
-    throw new Error(
-      `User request failed (${response.status} ${response.statusText})`,
-    );
+    throw new Error(`User request failed (${response.status} ${response.statusText})`);
+  }
+
+  return response.json();
+};
+
+export const fetchJobs = async () => {
+  if (simulateUserError) {
+    throw new Error("Simulated user fetch error");
+  }
+
+  const response = await fetch(`${API_URL}/jobs`);
+
+  if (!response.ok) {
+    throw new Error(`Jobs request failed (${response.status} ${response.statusText})`);
   }
 
   return response.json();

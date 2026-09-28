@@ -2,9 +2,9 @@ import { createBrowserRouter } from "react-router";
 import App from "./App.jsx";
 import JobList from "./pages/JobList.jsx";
 import FavoriteJobs from "./pages/FavoriteJobs.jsx";
-import JobItem from "./pages/JobItem.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import Settings from "./pages/Settings.jsx";
+import JobDetailsPage from "./pages/JobDetailsPage.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -21,10 +21,8 @@ export const router = createBrowserRouter([
       },
       {
         path: "jobs/:id",
-        element: <JobItem />,
-        handle: {
-          breadcrumb: (data, params) => data?.title ?? `Job ${params.id}`,
-        },
+        element: <JobDetailsPage />,
+        handle: { breadcrumb: "Job Details" },
       },
       {
         path: "favorites",
