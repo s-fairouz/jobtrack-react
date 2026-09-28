@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   BsSearch,
   BsX,
@@ -6,6 +6,7 @@ import {
   BsFilterCircle,
   BsSortDown,
 } from "react-icons/bs";
+import { useDebounce } from "../hooks/useDebounce.js";
 
 const SearchBar = ({
   searchTerm = "",
@@ -21,10 +22,33 @@ const SearchBar = ({
   totalResults = 0,
   onClearFilters,
 }) => {
+  // Local state ensures instant visual feedback while typing (zero lag)
+  const [localSearchTerm, setLocalSearchTerm] = useState(searchTerm);
+  // Debounce the input by 300ms before sending query to parent
+  const debouncedSearchTerm = useDebounce(localSearchTerm, 300);
+
   const categories = ["All", "Engineering", "Design", "DevOps", "Product"];
   const jobTypes = ["All", "Full-time", "Hybrid", "Contract"];
 
+  // Emit debounced value to parent search handler
+  useEffect(() => {
+    if (debouncedSearchTerm !== searchTerm) {
+      onSearchChange?.(debouncedSearchTerm);
+    }
+  }, [debouncedSearchTerm]);
+
+  // Sync local input state when parent clears or changes searchTerm externally
+  useEffect(() => {
+    setLocalSearchTerm(searchTerm);
+  }, [searchTerm]);
+
+  const handleClearSearch = () => {
+    setLocalSearchTerm("");
+    onSearchChange?.("");
+  };
+
   const hasActiveFilters =
+    localSearchTerm.trim() !== "" ||
     searchTerm.trim() !== "" ||
     categoryFilter !== "All" ||
     typeFilter !== "All" ||
@@ -41,14 +65,15 @@ const SearchBar = ({
           </div>
           <input
             type="text"
-            value={searchTerm}
-            onChange={(e) => onSearchChange?.(e.target.value)}
+            value={localSearchTerm}
+            onChange={(e) => setLocalSearchTerm(e.target.value)}
             placeholder="Search by role, company, skills, or tags..."
             className="w-full pl-10 pr-9 py-2.5 bg-slate-50 dark:bg-slate-800/60 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 text-sm rounded-xl border border-slate-200 dark:border-slate-700/60 focus:outline-none focus:border-indigo-500 dark:focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/20 transition-all"
           />
-          {searchTerm && (
+          {localSearchTerm && (
             <button
-              onClick={() => onSearchChange?.("")}
+              type="button"
+              onClick={handleClearSearch}
               className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 cursor-pointer"
               aria-label="Clear search"
             >
