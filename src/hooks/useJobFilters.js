@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useDebounce } from "./useDebounce.js";
 import { matchesFilters, sortJobs } from "../utils/jobFilters.js";
 
 export const useJobFilters = (jobs) => {
@@ -7,6 +8,8 @@ export const useJobFilters = (jobs) => {
   const [typeFilter, setTypeFilter] = useState("All");
   const [remoteOnly, setRemoteOnly] = useState(false);
   const [sortBy, setSortBy] = useState("newest");
+
+  const debouncedSearchTerm = useDebounce(searchTerm, 300);
 
   const clearFilters = () => {
     setSearchTerm("");
@@ -18,7 +21,12 @@ export const useJobFilters = (jobs) => {
 
   const filteredJobs = jobs
     .filter((job) =>
-      matchesFilters(job, { searchTerm, categoryFilter, typeFilter, remoteOnly })
+      matchesFilters(job, {
+        searchTerm: debouncedSearchTerm,
+        categoryFilter,
+        typeFilter,
+        remoteOnly,
+      })
     )
     .sort((a, b) => sortJobs(a, b, sortBy));
 
