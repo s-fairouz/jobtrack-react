@@ -10,7 +10,7 @@ import JobTypeBadge from "./JobTypeBadge.jsx";
 import FavoriteButton from "./FavoriteButton.jsx";
 import { formatPostedDate } from "../../utils/formatPostedDate.js";
 
-const JobCardList = ({ job, isFavorite, onToggleFavorite }) => {
+const JobCardList = ({ job, isFavorite, isApplied, onToggleFavorite }) => {
   const {
     id,
     title,
@@ -51,6 +51,11 @@ const JobCardList = ({ job, isFavorite, onToggleFavorite }) => {
               >
                 {title}
               </Link>
+              {isApplied && (
+                <span className="px-2 py-0.5 rounded-md text-[11px] font-bold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800 flex items-center gap-1">
+                  ✓ Applied
+                </span>
+              )}
               <JobTypeBadge jobType={jobType} />
               {isRemote && (
                 <span className="px-2 py-0.5 rounded-md text-[11px] font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20">

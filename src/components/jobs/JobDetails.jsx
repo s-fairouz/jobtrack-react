@@ -46,6 +46,7 @@ const OverviewRow = ({ icon: Icon, label, value, iconStyles }) => (
 const JobDetails = ({
   job,
   isFavorite,
+  isApplied = false,
   copied,
   onToggleFavorite,
   onShare,
@@ -152,10 +153,24 @@ const JobDetails = ({
             <button
               type="button"
               onClick={onApply}
-              className="px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-600 text-white font-bold text-sm shadow-md shadow-indigo-500/20 hover:shadow-indigo-500/30 transition-all cursor-pointer flex items-center gap-2"
+              disabled={isApplied}
+              className={`px-6 py-3 rounded-xl font-bold text-sm transition-all flex items-center gap-2 cursor-pointer ${
+                isApplied
+                  ? "bg-emerald-600 dark:bg-emerald-500 text-white shadow-md shadow-emerald-500/20 cursor-default"
+                  : "bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-600 text-white shadow-md shadow-indigo-500/20 hover:shadow-indigo-500/30"
+              }`}
             >
-              Apply Now
-              <BsArrowRight size={16} />
+              {isApplied ? (
+                <>
+                  <BsCheckCircleFill size={16} />
+                  Applied
+                </>
+              ) : (
+                <>
+                  Apply Now
+                  <BsArrowRight size={16} />
+                </>
+              )}
             </button>
           </div>
         </div>

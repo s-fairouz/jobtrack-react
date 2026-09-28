@@ -3,12 +3,14 @@ import { Link } from "react-router";
 import { BsHeartFill, BsBriefcase, BsArrowRight } from "react-icons/bs";
 import { getJobResources } from "../resources/index.js";
 import { useFavorites } from "../hooks/useFavorites.js";
+import { useAppliedJobs } from "../hooks/useAppliedJobs.js";
 import JobCardGrid from "../components/jobs/JobCardGrid.jsx";
 
 const FavoriteJobs = () => {
   const { jobsPromise } = getJobResources();
   const jobs = use(jobsPromise) || [];
   const { favoriteIds, isFavorite, toggleFavorite } = useFavorites();
+  const { isApplied } = useAppliedJobs();
 
   const favoriteJobs = jobs.filter((job) => favoriteIds.includes(job.id));
 
@@ -47,6 +49,7 @@ const FavoriteJobs = () => {
               key={job.id}
               job={job}
               isFavorite={isFavorite(job.id)}
+              isApplied={isApplied(job.id)}
               onToggleFavorite={() => toggleFavorite(job.id)}
             />
           ))}

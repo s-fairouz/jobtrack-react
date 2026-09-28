@@ -1,5 +1,12 @@
-import { BsBriefcase, BsGear, BsHeart } from "react-icons/bs";
+import { NavLink } from "react-router";
+import { BsBriefcase, BsGear, BsHeart, BsSendCheck } from "react-icons/bs";
+import { useFavorites } from "../../hooks/useFavorites.js";
+import { useAppliedJobs } from "../../hooks/useAppliedJobs.js";
+
 const MenuDropdown = ({ onMenuToggle }) => {
+  const { count: favoritesCount } = useFavorites();
+  const { appliedCount } = useAppliedJobs();
+
   return (
     <>
       <div
@@ -12,42 +19,89 @@ const MenuDropdown = ({ onMenuToggle }) => {
           Navigation
         </div>
 
-        {/* Active Job List */}
-        <div
-          id="dropdown-joblist"
-          className="flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm bg-gradient-to-r from-indigo-600 to-indigo-500 text-white shadow-md shadow-indigo-500/20 cursor-pointer"
+        {/* Job List */}
+        <NavLink
+          to="/jobs"
+          onClick={onMenuToggle}
+          className={({ isActive }) =>
+            `flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm transition-colors ${
+              isActive
+                ? "bg-indigo-600 dark:bg-indigo-500 text-white shadow-md shadow-indigo-500/20 font-semibold"
+                : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white"
+            }`
+          }
         >
           <BsBriefcase size={18} />
           <span>Job List</span>
-        </div>
+        </NavLink>
 
         {/* Favourites */}
-        <div
-          id="dropdown-favourites"
-          className="flex items-center justify-between px-3 py-2.5 rounded-xl font-medium text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-pointer"
+        <NavLink
+          to="/favorites"
+          onClick={onMenuToggle}
+          className={({ isActive }) =>
+            `flex items-center justify-between px-3 py-2.5 rounded-xl font-medium text-sm transition-colors ${
+              isActive
+                ? "bg-indigo-600 dark:bg-indigo-500 text-white shadow-md shadow-indigo-500/20 font-semibold"
+                : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white"
+            }`
+          }
         >
           <div className="flex items-center gap-3">
             <BsHeart size={18} />
             <span>Favourites</span>
           </div>
-          <span className="px-2 py-0.5 text-xs font-bold rounded-full bg-pink-500 text-white">
-            3
-          </span>
-        </div>
+          {favoritesCount > 0 && (
+            <span className="px-2 py-0.5 text-xs font-bold rounded-full bg-pink-500 text-white">
+              {favoritesCount}
+            </span>
+          )}
+        </NavLink>
+
+        {/* Applied */}
+        <NavLink
+          to="/applied"
+          onClick={onMenuToggle}
+          className={({ isActive }) =>
+            `flex items-center justify-between px-3 py-2.5 rounded-xl font-medium text-sm transition-colors ${
+              isActive
+                ? "bg-indigo-600 dark:bg-indigo-500 text-white shadow-md shadow-indigo-500/20 font-semibold"
+                : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white"
+            }`
+          }
+        >
+          <div className="flex items-center gap-3">
+            <BsSendCheck size={18} />
+            <span>Applied Jobs</span>
+          </div>
+          {appliedCount > 0 && (
+            <span className="px-2 py-0.5 text-xs font-bold rounded-full bg-emerald-500 text-white">
+              {appliedCount}
+            </span>
+          )}
+        </NavLink>
 
         <div className="h-px bg-slate-200 dark:bg-slate-800 my-1" />
 
         {/* Settings */}
-        <div
-          id="dropdown-settings"
-          className="flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-pointer"
+        <NavLink
+          to="/jobs/settings"
+          onClick={onMenuToggle}
+          className={({ isActive }) =>
+            `flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm transition-colors ${
+              isActive
+                ? "bg-indigo-600 dark:bg-indigo-500 text-white shadow-md shadow-indigo-500/20 font-semibold"
+                : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white"
+            }`
+          }
         >
           <BsGear size={18} />
           <span>Settings</span>
-        </div>
+        </NavLink>
       </div>
     </>
   );
 };
 
 export default MenuDropdown;
+

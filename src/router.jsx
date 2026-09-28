@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router";
 import App from "./App.jsx";
 import JobList from "./pages/JobList.jsx";
 import FavoriteJobs from "./pages/FavoriteJobs.jsx";
+import AppliedJobs from "./pages/AppliedJobs.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import Settings from "./pages/Settings.jsx";
 import JobDetailsPage from "./pages/JobDetailsPage.jsx";
@@ -28,6 +29,11 @@ export const router = createBrowserRouter([
         path: "favorites",
         element: <FavoriteJobs />,
         handle: { breadcrumb: "Favorites" },
+      },
+      {
+        path: "applied",
+        element: <AppliedJobs />,
+        handle: { breadcrumb: "Applied Jobs" },
       },
       {
         path: "jobs/settings",
