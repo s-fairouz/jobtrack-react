@@ -1,5 +1,6 @@
 import { BsSearch } from "react-icons/bs";
 import JobItem from "../../pages/JobItem.jsx";
+import JobCard from "./JobCard.jsx";
 
 const JobGrid = ({ jobs, viewMode, onClearFilters }) => {
   if (jobs.length === 0) {
@@ -37,7 +38,7 @@ const JobGrid = ({ jobs, viewMode, onClearFilters }) => {
       }
     >
       {jobs.map((job) => (
-        <JobItem key={job.id} job={job} viewMode={viewMode} />
+        <JobCard key={job.id} job={job} viewMode={viewMode} />
       ))}
     </div>
   );
