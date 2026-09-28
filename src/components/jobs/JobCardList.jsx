@@ -26,7 +26,7 @@ const JobCardList = ({ job, isFavorite, onToggleFavorite }) => {
   } = job;
 
   return (
-    <div className="group relative bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:border-indigo-400 dark:hover:border-indigo-500/50 rounded-2xl p-5 shadow-xs hover:shadow-lg transition-all duration-200">
+    <div className="group relative bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 hover:border-indigo-500/60 dark:hover:border-indigo-500/60 rounded-2xl p-5 shadow-xs hover:shadow-lg transition-all duration-200">
       {featured && (
         <div className="absolute top-0 right-6 -translate-y-1/2 bg-gradient-to-r from-amber-500 to-amber-400 text-slate-950 font-extrabold text-[10px] uppercase tracking-wider px-3 py-0.5 rounded-full shadow-xs flex items-center gap-1">
           <BsLightningChargeFill size={10} />
@@ -39,7 +39,7 @@ const JobCardList = ({ job, isFavorite, onToggleFavorite }) => {
           <img
             src={companyLogo}
             alt={company}
-            className="w-12 h-12 rounded-xl object-cover border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 shrink-0"
+            className="w-12 h-12 rounded-xl object-cover border border-slate-200/80 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 shrink-0"
             onError={(e) => (e.target.style.display = "none")}
           />
 
@@ -53,14 +53,14 @@ const JobCardList = ({ job, isFavorite, onToggleFavorite }) => {
               </Link>
               <JobTypeBadge jobType={jobType} />
               {isRemote && (
-                <span className="px-2 py-0.5 rounded-md text-[11px] font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20">
+                <span className="px-2 py-0.5 rounded-md text-[11px] font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20">
                   Remote
                 </span>
               )}
             </div>
 
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-slate-600 dark:text-slate-400 font-medium">
-              <span className="font-semibold text-slate-800 dark:text-slate-200">
+              <span className="font-semibold text-slate-900 dark:text-slate-200">
                 {company}
               </span>
               <span>•</span>
@@ -69,7 +69,7 @@ const JobCardList = ({ job, isFavorite, onToggleFavorite }) => {
                 {location}
               </span>
               <span>•</span>
-              <span className="flex items-center gap-1 text-indigo-600 dark:text-indigo-400 font-bold">
+              <span className="flex items-center gap-1 text-indigo-600 dark:text-indigo-400 font-extrabold">
                 <BsCashStack size={12} />
                 {salary}
               </span>
@@ -80,7 +80,7 @@ const JobCardList = ({ job, isFavorite, onToggleFavorite }) => {
                 {tags.slice(0, 4).map((tag) => (
                   <span
                     key={tag}
-                    className="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[11px] font-medium"
+                    className="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-[11px] font-medium border border-slate-200/50 dark:border-slate-700/50"
                   >
                     {tag}
                   </span>
@@ -101,7 +101,7 @@ const JobCardList = ({ job, isFavorite, onToggleFavorite }) => {
             />
             <Link
               to={`/jobs/${id}`}
-              className="px-4 py-2 rounded-xl bg-slate-900 dark:bg-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-500 text-white font-semibold text-xs transition-colors flex items-center gap-1.5"
+              className="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 active:scale-[0.98] text-white font-semibold text-xs transition-all flex items-center gap-1.5 shadow-sm shadow-indigo-500/25 cursor-pointer"
             >
               Details
               <BsArrowRight size={14} />

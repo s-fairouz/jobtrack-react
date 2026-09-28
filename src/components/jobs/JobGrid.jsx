@@ -1,5 +1,4 @@
 import { BsSearch } from "react-icons/bs";
-import JobItem from "../../pages/JobItem.jsx";
 import JobCard from "./JobCard.jsx";
 
 const JobGrid = ({ jobs, viewMode, onClearFilters }) => {
