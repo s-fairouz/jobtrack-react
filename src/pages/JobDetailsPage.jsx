@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { getJobResources } from "../resources/index.js";
 import { useFavorites } from "../hooks/useFavorites.js";
 import { useAppliedJobs } from "../hooks/useAppliedJobs.js";
+import { useNotifications } from "../hooks/useNotifications.js";
 import JobDetails from "../components/jobs/JobDetails.jsx";
 import JobNotFound from "../components/jobs/JobNotFound.jsx";
 
@@ -12,6 +13,7 @@ const JobDetailsPage = () => {
   const jobs = use(jobsPromise) || [];
   const { isFavorite, toggleFavorite } = useFavorites();
   const { isApplied, applyToJob } = useAppliedJobs();
+  const { addNotification } = useNotifications();
   const [copied, setCopied] = useState(false);
   const [showAppliedToast, setShowAppliedToast] = useState(false);
 
@@ -34,6 +36,12 @@ const JobDetailsPage = () => {
   const handleApply = () => {
     if (!alreadyApplied) {
       applyToJob(job.id);
+      addNotification({
+        type: "applied",
+        title: "Application Submitted",
+        message: `Your application for ${job.title} at ${job.company} was successfully submitted.`,
+        link: "/applied",
+      });
     }
     setShowAppliedToast(true);
   };
